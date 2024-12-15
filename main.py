@@ -46,16 +46,13 @@ class NumberGG:
 
         while True:
             try:
-                self.player_guess = int(input("What's the number? "))
-                if self.gained_chances == self.current_chances:
-                    self.check_number(self.player_guess)
-                    break
-                elif self.player_guess == self.the_number:
-                    self.check_number(self.player_guess)
+                if self.gained_chances == self.current_chances or self.player_guess == self.the_number:
+                    want_replay = input("Do you want to play again? [y/n]")
                     break
                 else:
                     self.current_chances += 1 
-                    self.check_number(self.player_guess)
+                self.player_guess = int(input("What's the number? "))
+                self.check_number(self.player_guess)
             except Exception:
                 print("Not a number.")
 
