@@ -24,8 +24,8 @@ class NumberGG:
 
     def hint(self):
         choice = ''
-        start_steps = self.guess_number - 3
-        end_steps = self.guess_number + 3
+        start_steps = self.guess_number - 2
+        end_steps = self.guess_number + 2
         if self.chances_gained == 3:
             choice = input("Do you want a hint? y/n")
         elif self.chances_gained == 5 and self.attempts == 3:
